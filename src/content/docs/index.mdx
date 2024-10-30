@@ -1,17 +1,65 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Дока к Platina360
+description: Ответы на вопросы, о которых вы думали, но боялись спросить
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Ответы на вопросы, о которых вы думали, но боялись спросить. DBT, даги, бакеты и прочая нечисть 
   image:
-    file: ../../assets/houston.webp
+    # file: ../../assets/houston.webp
+    html: |
+      <div id="ex1" class="container">
+        <img id="ex1-layer" class="box" src="/houston.webp">
+      </div>
+      <style>
+        .container {
+          height: 500px;
+          width: 500px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .box {
+          height: 200px;
+          width: 200px;
+          position: absolute;
+        }
+      </style>
+      <script>
+        let constrain = 20;
+        let mouseOverContainer = document.getElementById("ex1");
+        let ex1Layer = document.getElementById("ex1-layer");
+
+        function transforms(x, y, el) {
+          let box = el.getBoundingClientRect();
+          let calcX = -(y - box.y - (box.height / 2)) / constrain;
+          let calcY = (x - box.x - (box.width / 2)) / constrain;
+          
+          return "perspective(100px) "
+            + "   rotateX("+ calcX +"deg) "
+            + "   rotateY("+ calcY +"deg) ";
+        };
+
+        function transformElement(el, xyEl) {
+          el.style.transform  = transforms.apply(null, xyEl);
+        }
+
+        mouseOverContainer.onmousemove = function(e) {
+          let xy = [e.clientX, e.clientY];
+          let position = xy.concat([ex1Layer]);
+
+          window.requestAnimationFrame(function(){
+            transformElement(ex1Layer, position);
+          });
+        };
+      </script>
+
+		
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Залезть в кроличью нору
+      link: /dbt/start
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Сама Platina360
+      link: http://192.168.15.15/
       icon: external
       variant: minimal
 ---
