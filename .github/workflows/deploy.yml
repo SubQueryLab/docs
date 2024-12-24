@@ -33,10 +33,19 @@ jobs:
       - name: Build application
         run: pnpm run build
 
-      - uses: MrMeison/yc-object-storage-action@main
+      # - uses: MrMeison/yc-object-storage-action@main
+      #   with:
+      #     accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
+      #     secretAccessKey: ${{ secrets.SECRET_ACCESS_KEY }}
+      #     bucketName: ${{ secrets.BUCKET }}
+      #     sourceDir: ./dist
+      #     clear: true
+      - name: Deploy to Yandex Cloud Object Storage
+        uses: paulvstrashnov/yandex-s3-upload-action@main
         with:
           accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
           secretAccessKey: ${{ secrets.SECRET_ACCESS_KEY }}
-          bucketName: ${{ secrets.BUCKET }}
-          sourceDir: ./dist
-          clear: true
+          bucket: ${{ secrets.BUCKET }}
+          localPath: './dist'
+          remotePath: ''
+          clearBucket: false
