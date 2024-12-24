@@ -1,0 +1,7 @@
+{
+  "yaml.schemas": {
+    "https://api.cerbos.dev/latest/cerbos/policy/v1/Policy.schema.json": "cerbos/policies/*",
+    "https://api.cerbos.dev/latest/cerbos/policy/v1/TestSuite.schema.json": "/cerbos/**/*_test.yaml",
+    "https://json.schemastore.org/github-workflow.json": "file:///Users/mironovich/dev/docs.subquery.ru/.github/workflows/deploy.yml"
+  }
+}
