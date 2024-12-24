@@ -47,5 +47,5 @@ jobs:
           secretAccessKey: ${{ secrets.SECRET_ACCESS_KEY }}
           bucket: ${{ secrets.BUCKET }}
           localPath: './dist'
-          remotePath: ''
+          remotePath: './'
           clearBucket: false
