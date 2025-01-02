@@ -9,6 +9,7 @@ export default defineConfig({
   site: "https://subquery.ru",
   base: "/docs",
   trailingSlash: "always",
+  outDir: './dist/docs/',
   integrations: [
     starlight({
       title: "Subquery // Документация",
