@@ -41,10 +41,28 @@ jobs:
       #     sourceDir: ./dist
       #     clear: true
       # Deploy
-      - uses: povetek/yandex-object-storage-action@v3
+      - name: Upload files to Object Storage
+        id: s3-upload
+        uses: yc-actions/yc-obj-storage-upload@v2
         with:
-          access-key-id: ${{ secrets.ACCESS_KEY_ID }}
-          secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+          yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
           bucket: ${{ secrets.BUCKET }}
-          path: dist
-          clear: true
+          root: ./dist
+          prefix: docs
+          # include: |
+          #   *.js
+          #   package.json
+          # exclude: |
+          #   **/*.ts
+          cache-control: |
+            *.js, *.css: public, max-age=31536000, immutable
+            *.png, *.jpg, *.jpeg, *.gif, *.svg, *.ico: public, max-age=31536000
+            *.html: max-age=3600
+            *: no-cache
+      # - uses: povetek/yandex-object-storage-action@v3
+      #   with:
+      #     access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+      #     secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+      #     bucket: ${{ secrets.BUCKET }}
+      #     path: dist
+      #     clear: true
