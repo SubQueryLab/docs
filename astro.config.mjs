@@ -6,10 +6,9 @@ import tailwind from "@astrojs/tailwind"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://subquery.ru",
-  base: "/docs",
+  site: "https://docs.subquery.ru",
   trailingSlash: "always",
-  outDir: './dist/docs/',
+  outDir: './dist',
   integrations: [
     starlight({
       title: "Subquery // Документация",
