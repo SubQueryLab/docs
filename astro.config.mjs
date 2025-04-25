@@ -32,6 +32,10 @@ export default defineConfig({
               label: "Ускоряем работу с данными в SubQuery",
               slug: "dbt/subquery_options",
             },
+            {
+              label: "Советы",
+              slug: "dbt/tips",
+            },
           ],
         },
       ],
