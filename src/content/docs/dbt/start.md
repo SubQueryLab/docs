@@ -45,11 +45,3 @@ title: Что такое dbt
 <div style="font-weight: bold;">✨ Добавление запуска по расписанию в UI c vars, уведомлениями об ошибках, бэкфилами.</div>
 <div style="font-weight: bold;">✨ Простая работа с таргетами и переключение между профилями.</div>
 <div style="font-weight: bold;">✨ Возможность работы в отдельных ветках, история версий, публикация изменений, решение конфликтов</div>
-
-#### Как начать работу с dbt в [SubQuery](https://subquery.ru/?utm_source=docs&utm_campaign=getstart).
-
-1. [Создание и настройка dbt проекта в SubQuery](dbt_project.md)
-2. [О dbt моделях в SubQuery](dbt_model.md)
-3. [Создание dbt модели в SubQuery](dbt_model_subquery.md)
-4. [Возможности в SubQuery](subquery_options.md)
-5. [Расписание в SubQuery](subquery_schedules.md)
