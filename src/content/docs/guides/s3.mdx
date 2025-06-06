@@ -1,0 +1,35 @@
+---
+title: Работа с S3
+---
+
+SubQuery предоставляет несколько инструментов для работы с облачным хранением данных в S3:
+
+- Менеджер файлов
+
+## Менеджер файлов
+
+Веб-клиент менеджера файлов предоставляет интуитивно понятный интерфейс для работы с S3-совместимыми хранилищами. Поддерживает Yandex Cloud, VK Cloud и другие аналогичные сервисы.
+
+### Важная информация о CORS
+
+#### Необходимые настройки
+
+Для правильной работы клиента **требуется настроить CORS** на стороне S3-провайдера. Без этого будут действовать ограничения:
+
+- Максимальный размер файла: **50 МБ**
+- Сниженная скорость загрузки
+- Возможные ошибки при работе
+
+#### Пример конфигурации CORS
+
+```json
+[
+  {
+    "AllowedHeaders": ["accept", "accept-encoding", "accept-language", "access-control-request-headers", "access-control-request-method", "origin", "priority", "referer", "sec-fetch-dest", "sec-fetch-mode", "sec-fetch-site", "user-agent", "content-type", "sec-ch-ua", "sec-ch-ua-mobile", "sec-ch-ua-platform"],
+    "AllowedMethods": ["GET", "PUT", "POST", "DELETE", "HEAD"],
+    "AllowedOrigins": ["https://subquery.ru/"]
+  }
+]
+
+</details>
+```
