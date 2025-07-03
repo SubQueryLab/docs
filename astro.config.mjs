@@ -38,6 +38,15 @@ export default defineConfig({
             },
           ],
         },
+        {
+          label: "Руководства",
+          items: [
+            {
+              label: "Работа с S3",
+              slug: "guides/s3",
+            }
+          ]
+        }
       ],
     }),
     tailwind({
