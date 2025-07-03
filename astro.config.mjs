@@ -39,7 +39,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "Гайды",
+          label: "Руководства",
           items: [
             {
               label: "Работа с S3",
