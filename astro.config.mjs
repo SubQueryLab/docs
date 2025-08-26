@@ -9,12 +9,13 @@ export default defineConfig({
   site: "https://docs.subquery.ru",
   trailingSlash: "always",
   outDir: "./dist",
+  base: "/",
   integrations: [
     starlight({
-      title: "docs.subquery.ru",
+      title: "SubQuery",
       customCss: ["./src/tailwind.css"],
       editLink: {
-        baseUrl: "https://github.com/OgnivoLab/docs/edit/master/",
+        baseUrl: "https://github.com/SubqueryLab/docs/edit/master/",
       },
       sidebar: [
         { label: "С чего начать", slug: "index" },
@@ -40,13 +41,8 @@ export default defineConfig({
         },
         {
           label: "Руководства",
-          items: [
-            {
-              label: "Работа с S3",
-              slug: "guides/s3",
-            }
-          ]
-        }
+          autogenerate: { directory: "guides" },
+        },
       ],
     }),
     tailwind({
