@@ -17,7 +17,24 @@ export default defineConfig({
       editLink: {
         baseUrl: "https://github.com/SubqueryLab/docs/edit/master/",
       },
+      favicon: "/favicon.ico",
       head: [
+        {
+          tag: "link",
+          attrs: {
+            rel: "icon",
+            href: "/favicon-32x32.png",
+            sizes: "32x32",
+          },
+        },
+        {
+          tag: "link",
+          attrs: {
+            rel: "icon",
+            href: "/favicon-16x16.png",
+            sizes: "16x16",
+          },
+        },
         {
           tag: "script",
           content: `(function(m,e,t,r,i,k,a){
