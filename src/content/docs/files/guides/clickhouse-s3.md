@@ -36,7 +36,7 @@ format = 'CSVWithNames';
 ```sql
 insert into function s3(
     s3_subquery
-    ,filename='demo/select1.csv'
+    ,filename='bucket_name/demo/select1.csv'
     ,format='CSVWithNames')
 select 1 as id
 ```
