@@ -70,8 +70,17 @@ export default defineConfig({
           ],
         },
         {
-          label: "Руководства",
-          autogenerate: { directory: "guides" },
+          label: "Файловый менеджер",
+          items: [
+            {
+              label: "Подключение",
+              slug: "files/start",
+            },
+            {
+              label: "Руководства",
+              autogenerate: { directory: "files/guides" },
+            },
+          ],
         },
       ],
     }),

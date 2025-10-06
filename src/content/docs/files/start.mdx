@@ -1,0 +1,41 @@
+---
+title: Менеджер файлов
+---
+
+Веб-клиент менеджера файлов предоставляет интуитивно понятный интерфейс для работы с S3-совместимыми хранилищами. Поддерживает Yandex Cloud, VK Cloud и другие аналогичные сервисы.
+
+## Cоздание бакета
+Сервисы, предоставляющие услуги объектного хранения:
+- <a href="https://yandex.cloud/en/services/storage" target="_blank" rel="nofollow">Yandex Object Storage</a>
+- <a href="https://cloud.vk.com/storage/" target="_blank" rel="nofollow">VK Object Storage</a>
+- <a href="https://cloud.ru/products/evolution-object-storage" target="_blank" rel="nofollow">Cloud.ru Evolution Object Storage</a>
+
+
+
+
+## Подключение бакета
+
+Для подключения необходимо зайти в раздел "Файлы", добавить подключение к бакету по кнопке __+__ и заполнить параметры.
+
+
+## Важная информация о CORS
+
+### Необходимые настройки
+
+Для правильной работы клиента **требуется настроить CORS** на стороне S3-провайдера. Без этого будут действовать ограничения:
+
+- Максимальный размер файла: **50 МБ**
+- Сниженная скорость загрузки
+- Возможные ошибки при работе
+
+### Пример конфигурации CORS
+
+```json
+[
+  {
+    "AllowedHeaders": ["accept", "accept-encoding", "accept-language", "access-control-request-headers", "access-control-request-method", "origin", "priority", "referer", "sec-fetch-dest", "sec-fetch-mode", "sec-fetch-site", "user-agent", "content-type", "sec-ch-ua", "sec-ch-ua-mobile", "sec-ch-ua-platform"],
+    "AllowedMethods": ["GET", "PUT", "POST", "DELETE", "HEAD"],
+    "AllowedOrigins": ["https://subquery.ru/"]
+  }
+]
+```
