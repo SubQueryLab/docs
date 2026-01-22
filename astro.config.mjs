@@ -67,6 +67,10 @@ export default defineConfig({
               label: "Советы",
               slug: "dbt/tips",
             },
+            {
+              label: "Адаптеры",
+              slug: "dbt/adapters",
+            },
           ],
         },
         {
