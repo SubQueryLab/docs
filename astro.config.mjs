@@ -72,10 +72,10 @@ export default defineConfig({
               label: "Адаптеры",
               slug: "dbt/adapters",
             },
-            {
-              label: "Руководства",
-              autogenerate: { directory: "dbt/guides" },
-            },
+            // {
+            //   label: "Руководства",
+            //   autogenerate: { directory: "dbt/guides" },
+            // },
           ],
         },
         {
