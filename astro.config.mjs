@@ -54,6 +54,7 @@ export default defineConfig({
           items: [
             { label: "Что такое dbt?", slug: "dbt/start" },
             { label: "Создание и настройка dbt проекта", slug: "dbt/project" },
+            { label: "Параметры подключения", slug: "dbt/connections" },
             { label: "dbt модели", slug: "dbt/models" },
             {
               label: "Создание и редактирование моделей в dbt",
@@ -71,6 +72,10 @@ export default defineConfig({
               label: "Адаптеры",
               slug: "dbt/adapters",
             },
+            {
+              label: "Руководства",
+              autogenerate: { directory: "dbt/guides" },
+            },
           ],
         },
         {
@@ -85,6 +90,10 @@ export default defineConfig({
               autogenerate: { directory: "files/guides" },
             },
           ],
+        },
+        {
+          label: "Управление",
+          autogenerate: { directory: "management" },
         },
       ],
     }),

@@ -16,52 +16,72 @@ title: Создание и настройка dbt проекта
 
 ![connect3](img/connect_db_3.png)
 
+###### Создание подключения:
 
- ###### Создание подключения:
 1. Введите **Название подключения.**
 2. Выберите **Тип подключения.**
 3. Введите **Хост**
 4. Введите **Порт**
 5. Введите **Имя пользователя**
-7. Введите **Пароль**
+6. Введите **Пароль**
 
 ![connect4](img/connect_db_4.png)
-
 
 <br>
 
 - Подключение **Успешно**
-![connect6](img/connect_db_6.png)
+  ![connect6](img/connect_db_6.png)
 
 <br>
 <br>
 
-- Подключение завершилось  **ошибкой**. Проверьте введенные значения в полях на корректность и попробуйте снова.
-![connect5](img/connect_db_5.png)
+- Подключение завершилось **ошибкой**. Проверьте введенные значения в полях на корректность и попробуйте снова.
+  ![connect5](img/connect_db_5.png)
+
+Предоставляемая учетная запись должна обладать следующими правами:
+
+**ClickHouse**
+
+```sql
+-- для создания материализаций
+grant on cluster clustername
+SHOW, SELECT, INSERT, ALTER, CREATE TABLE, CREATE VIEW, CREATE DICTIONARY, DROP TABLE, DROP VIEW, DROP DICTIONARY, TRUNCATE, OPTIMIZE, SYSTEM SYNC REPLICA on dbname.*
+to 'username'
+
+-- для чтения сырья
+grant on cluster clustername
+SHOW, SELECT on dbname.*
+to 'username'
+
+-- прочие
+grant on cluster clustername create temporary table, cluster, remote, kill query on *.* to 'username'
+```
 
 ---
 
 #### 2. DBT target.
+
 1. Введите **Название DBT target.**
 2. Введите дополнительные настройки при необходимости.
 
 ![connect7](img/connect_db_7.png)
 
 Подробнее про конфигурацию профайлов для каждого адаптера, можно найти в документации:
+
 1. [dbt-postgres](https://docs.getdbt.com/docs/core/connect-data-platform/postgres-setup#profile-configuration)
 
 2. [dbt-clickhouse](https://github.com/ClickHouse/dbt-clickhouse)
 
-
 ---
 
 #### 3. Настройки DBT.
+
 1. Выполните одно из действий:
    - **Создать новый репозиторий** (флаг установлен по умолчанию)
    - **Подключить существующий репозиторий**
      - **Ссылка на репозиторий:** вставьте SSH-ссылку на ваш репозиторий.
      - **Ветка по умолчанию:** укажите название основной ветки..
-     - **Публичный deploy-ключ:** скопируйте и добавьте  ***SSH keys***/ ***Deploy keys*** в свой репозиторий.
+     - **Публичный deploy-ключ:** скопируйте и добавьте **_SSH keys_**/ **_Deploy keys_** в свой репозиторий.
 
 ![connect9](img/connect_db_9.png)
 
