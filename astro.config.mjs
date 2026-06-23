@@ -79,6 +79,27 @@ export default defineConfig({
           ],
         },
         {
+          label: "Ноутбуки",
+          items: [
+            {
+              label: "Работа с ноутбуками",
+              slug: "notebooks/start",
+            },
+            {
+              label: "Работа с СУБД",
+              slug: "notebooks/databases",
+            },
+            {
+              label: "Работа с файлами",
+              slug: "notebooks/files",
+            },
+            {
+              label: "Установка библиотек",
+              slug: "notebooks/libraries",
+            },
+          ],
+        },
+        {
           label: "Файловый менеджер",
           items: [
             {
