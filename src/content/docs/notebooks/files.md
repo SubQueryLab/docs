@@ -26,11 +26,23 @@ pd.read_csv("filename.csv")
 
 ## Пример с DuckDB
 
+
 ```sql
-select * from sq_data.filename
+select * from sq_local.filename
 ```
 
-Все загруженные файлы доступны в DuckDB через схему sq_data как view с именем файла
+Все загруженные файлы доступны в DuckDB через схему sq_local как view с именем файла без расширения.
+Если название файла содержит спецсимволы, при обращении оберните его в двойные кавычки.
+
+```sql
+select * from sq_local."data-2026.01.01"
+```
+
+Если не получается найти, поможет просмотр всех табличек.
+
+```sql
+show all tables;
+```
 
 ## Важно
 
